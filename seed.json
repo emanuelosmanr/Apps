@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "profiles": [
+    {
+      "id": "admin",
+      "name": "Administrador",
+      "role": "admin",
+      "dataSalt": "+K4N2xcdwvEOZG3GCr8fUg==",
+      "dataIv": "DKGYzAh6bk1qXaNd",
+      "cipher": "3pO1CnlrGPV4GkngE3OqCR6NseWw0q4ziQATSE/pbi2efqAD62gem5e00GHDrDy1DzLLKIeAX/CxtRs/BSmDcNhym9cVfnan25hlQKjGLRa0INubkJ4EPQ7r5hBRGQ==",
+      "passwordSalt": "MZ4an5Dum5jvfFfrZMUP2w==",
+      "passwordIv": "D2QXJMWrE3WecfDf",
+      "wrappedKey": "sam0sgsAVwWaSUpyL/NII2GJrOC28KGAlJDundxZKCl+S4LZVOxKxksLtfcB+OJQ",
+      "recovery": null
+    },
+    {
+      "id": "emanuel",
+      "name": "Emanuel",
+      "role": "user",
+      "dataSalt": "ohf4iqj0s9ZI6s3pK1MKqw==",
+      "dataIv": "lATRXUkqTiSExxqp",
+      "cipher": "E6ydLFMbPOIve3N7rlyYAubKUyVeK3gnAiiOiPepOEhkOn2k7EgmEU5w1OfRNkttbj3Au69B/J0RDu7ekclnuCIHBV5kMq59EtfCnp5pHM256w6in4zr+q7LMqRyuZIOfftLvkQxkmo2272AJASEo5X+4VwGbhI1H4I2fG/+NNaL2du59jMEc0W7jPKZNvXtgfx41Z5R6wmoS5CBEB8Gi9ZQti875wRJRWQyKnVAW7MvHAJXo4ojKSi5P5Cyq+plEMoaYZj94ysHSPAj2wu5XpSmObJeNetwkRBwkF6KeBjH2P9HO5Hgqx92chzl3j9/OyPdKWDTb9eCRJan6A1LeLp0JMtuo8eW+uH6IxBtSEzFWDNJjRB6iyFDYcWwebWNjOldQeBIrvnbXO1JwFO00+suupnClPWf57wCrUHsk1n/8/HSpdUsJaYIgmrGfLm6OIhZFcCU/n/kvCAOobizz0UxKc/5CReihJ+W3EgXd1OATfTcp2OEZQ921Cekeo42qjJv/ldQ/bwXk4ZSBRLdxS0WM9jdUnbGSwjNNHQUsVeSbJRVuGiZrarSm4uMwQx0Vnb/jTKa6nCHg096TcPr0KrI5JVNRhU4YB6S8KjfOY13QabJCqXRiutiOR34R5Ccy8LgO68UifOIah9IsVmr95evCZGxYwj6pOVSpwq51hdxYYcdpUbViGotUpzyZbPof+MmYgkXYuREDtShaH3zFAPDi/NeURcD0fFZmUsYqkwz8xL8S8SGGKRkq7iAJZbQHzZJPftgA29Ot7YRRhJ/onj6p68fwZYQXZnbG8UM7g/DfhNwWR+t7SW3eHVI304UPqLFRqQ1FvsoTo4doTRL3ajNzRKq9C+g045ox5natu8MJqlwmxWjZucC6lwFX+osYlfp1nsr4kQ3YS8AxAVhXsA31vdDDY7QtwoJ7d98fzqSmYEO25PstQpB3SG1GFooASJd62ETJ/tsS5Bcl+kx1fFvSbz4mOrom52dUFHRTBDIWH8HTJR7XAvExUtC43myBRv57mObRb0eTXXECVU=",
+      "passwordSalt": "e/sgK/la2rbxFNSkH58B8w==",
+      "passwordIv": "i0ZnINEZhHmeNc9g",
+      "wrappedKey": "C505SLQX8rmXPOE9EQGboadzuEpfMBu5rGg+wBxanqy1ls0WfBkCBF4XNnWEhR8j",
+      "recovery": null
+    }
+  ]
+}
