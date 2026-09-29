@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f4f1ec" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Closet Studio" />
+  <meta name="description" content="Clóset digital y creador local de combinaciones de ropa." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>Closet Studio</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-view="home" aria-label="Ir al inicio"><span class="brand-mark">CS</span><span>Closet Studio</span></button>
+      <div class="top-actions">
+        <button id="installBtn" class="ghost hidden">Instalar</button>
+        <button id="themeBtn" class="icon-btn" aria-label="Cambiar tema">☾</button>
+      </div>
+    </header>
+
+    <nav class="desktop-nav" aria-label="Principal">
+      <button data-view="home" class="active">Inicio</button>
+      <button data-view="closet">Mi clóset</button>
+      <button data-view="combine">Combinar</button>
+      <button data-view="inspire">Inspírame</button>
+      <button data-view="history">Guardados</button>
+      <button data-view="profile">Perfil</button>
+    </nav>
+
+    <main id="main">
+      <section id="home" class="view active">
+        <div class="hero">
+          <div>
+            <span class="eyebrow">TU ESTILO, SIN COMPLICACIONES</span>
+            <h1>Convierte tu clóset en combinaciones que sí usarías.</h1>
+            <p>Organiza tus prendas, prueba capas, recibe sugerencias por armonía de color y guarda tus looks favoritos. Tus fotos permanecen en este dispositivo.</p>
+            <div class="button-row">
+              <button class="primary" data-view="closet">Añadir prendas</button>
+              <button class="secondary" data-view="combine">Crear un look</button>
+            </div>
+          </div>
+          <div class="hero-card" aria-label="Ejemplo de combinación">
+            <div class="mini-look">
+              <div class="garment-shape jacket">Chaqueta</div>
+              <div class="garment-shape shirt">Camisa</div>
+              <div class="garment-shape pants">Pantalón</div>
+              <div class="garment-shape shoes">Zapatos</div>
+            </div>
+            <div><strong>Neutros con carácter</strong><small>Formal · contraste equilibrado</small></div>
+          </div>
+        </div>
+        <div class="stats-grid">
+          <article><strong id="garmentCount">0</strong><span>prendas en tu clóset</span></article>
+          <article><strong id="lookCount">0</strong><span>looks guardados</span></article>
+          <article><strong>Privado</strong><span>datos almacenados localmente</span></article>
+        </div>
+        <div class="section-heading"><div><span class="eyebrow">ATAJOS</span><h2>¿Qué quieres hacer?</h2></div></div>
+        <div class="feature-grid">
+          <button class="feature-card" data-view="closet"><span>＋</span><h3>Digitalizar mi clóset</h3><p>Sube fotos, clasifica y filtra tus prendas.</p></button>
+          <button class="feature-card" data-view="combine"><span>◫</span><h3>Armar por capas</h3><p>Combina chaqueta, camisa, pantalón y zapatos.</p></button>
+          <button class="feature-card" data-view="inspire"><span>✦</span><h3>Inspiración inteligente</h3><p>Parte de una prenda o usa lo que ya tienes.</p></button>
+        </div>
+      </section>
+
+      <section id="closet" class="view">
+        <div class="section-heading"><div><span class="eyebrow">INVENTARIO PERSONAL</span><h1>Mi clóset</h1><p>Las imágenes se guardan en IndexedDB dentro de tu navegador.</p></div><button id="openUpload" class="primary">＋ Nueva prenda</button></div>
+        <div class="filter-bar">
+          <select id="closetCategory" aria-label="Filtrar por categoría"><option value="all">Todas las categorías</option><option value="upper">Tronco superior</option><option value="lower">Tronco inferior</option><option value="shoes">Zapatos</option></select>
+          <select id="closetAudience" aria-label="Filtrar por sección"><option value="all">Todas las secciones</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option><option value="unisex">Unisex</option></select>
+          <input id="closetSearch" type="search" placeholder="Buscar prenda..." aria-label="Buscar prenda" />
+        </div>
+        <div id="closetGrid" class="closet-grid"></div>
+        <div id="closetEmpty" class="empty"><span>◇</span><h3>Tu clóset está esperando</h3><p>Añade tu primera prenda para empezar a combinar.</p></div>
+      </section>
+
+      <section id="combine" class="view">
+        <div class="section-heading"><div><span class="eyebrow">MESA DE ESTILO</span><h1>Construye tu look</h1><p>Elige una o varias capas superiores y completa la combinación.</p></div><button id="autoCombine" class="secondary">✦ Sugerir automáticamente</button></div>
+        <div class="builder-layout">
+          <div class="look-board">
+            <div id="layerUpper" class="look-slot large"><span>Tronco superior</span><small>Puedes seleccionar varias capas</small></div>
+            <div id="layerLower" class="look-slot"><span>Tronco inferior</span></div>
+            <div id="layerShoes" class="look-slot short"><span>Zapatos</span></div>
+          </div>
+          <aside class="selection-panel">
+            <div class="segmented" role="tablist"><button class="active" data-pick="upper">Superior</button><button data-pick="lower">Inferior</button><button data-pick="shoes">Zapatos</button></div>
+            <div id="pickerGrid" class="picker-grid"></div>
+            <div id="harmonyNote" class="harmony-note">Selecciona prendas para analizar la armonía del look.</div>
+            <label>Estilo objetivo<select id="targetStyle"><option>Casual</option><option>Formal</option><option>Informal</option><option>Deportivo</option><option>Elegante</option><option>Minimalista</option></select></label>
+            <button id="saveLook" class="primary full">Guardar combinación</button>
+          </aside>
+        </div>
+      </section>
+
+      <section id="inspire" class="view">
+        <div class="section-heading"><div><span class="eyebrow">ASISTENTE VISUAL</span><h1>Inspírame</h1><p>Elige una prenda ancla. El motor local buscará piezas compatibles y creará una composición visual.</p></div></div>
+        <div class="inspire-layout">
+          <div class="drop-card"><div class="upload-symbol">✦</div><h2>Parte de una prenda</h2><p>Usa una prenda del clóset o sube una foto nueva.</p><select id="anchorSelect"><option value="">Seleccionar del clóset...</option></select><label class="secondary file-label">Subir foto temporal<input id="anchorUpload" type="file" accept="image/*" capture="environment" /></label></div>
+          <div class="settings-card"><h3>Dirección del look</h3><label>Sección<select id="inspireAudience"><option value="unisex">Unisex</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label><label>Estilo<select id="inspireStyle"><option>Casual</option><option>Formal</option><option>Informal</option><option>Deportivo</option><option>Elegante</option></select></label><label>Ocasión<select id="occasion"><option>Día a día</option><option>Trabajo</option><option>Evento</option><option>Fin de semana</option><option>Viaje</option></select></label><button id="generateIdea" class="primary full">Generar sugerencia</button></div>
+        </div>
+        <div id="ideaResult" class="idea-result hidden"><div id="ideaVisual" class="idea-visual"></div><div><span class="eyebrow">SUGERENCIA PERSONALIZADA</span><h2 id="ideaTitle"></h2><p id="ideaText"></p><div id="ideaTags" class="tags"></div><button id="saveIdea" class="secondary">Guardar idea</button></div></div>
+      </section>
+
+      <section id="history" class="view"><div class="section-heading"><div><span class="eyebrow">ARCHIVO PERSONAL</span><h1>Looks guardados</h1><p>Vuelve a tus combinaciones favoritas cuando necesites ideas rápidas.</p></div></div><div id="historyGrid" class="history-grid"></div><div id="historyEmpty" class="empty"><span>♡</span><h3>Aún no tienes looks guardados</h3><p>Crea una combinación y guárdala aquí.</p></div></section>
+
+      <section id="profile" class="view"><div class="section-heading"><div><span class="eyebrow">PREFERENCIAS</span><h1>Tu perfil de estilo</h1><p>Estas opciones afinan las recomendaciones y se guardan solo en tu dispositivo.</p></div></div><div class="profile-grid"><div class="settings-card"><h3>Tono de piel aproximado</h3><p class="muted">Elige el que más se acerque. Es una guía de color, no una clasificación personal.</p><div id="skinTones" class="skin-tones"><button data-tone="claro" style="--tone:#f3d2bd" aria-label="Claro"></button><button data-tone="medio" style="--tone:#d6a17d" aria-label="Medio"></button><button data-tone="oliva" style="--tone:#b9855e" aria-label="Oliva"></button><button data-tone="profundo" style="--tone:#75462f" aria-label="Profundo"></button></div></div><div class="settings-card"><h3>Preferencias</h3><label>Sección predeterminada<select id="profileAudience"><option value="unisex">Unisex</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label><label>Estilo favorito<select id="profileStyle"><option>Casual</option><option>Formal</option><option>Informal</option><option>Deportivo</option><option>Elegante</option><option>Minimalista</option></select></label><button id="saveProfile" class="primary full">Guardar preferencias</button></div><div class="settings-card danger-zone"><h3>Privacidad y datos</h3><p class="muted">Exporta una copia JSON de tus datos o elimina todo el contenido local.</p><div class="button-row"><button id="exportData" class="secondary">Exportar</button><button id="clearData" class="danger">Borrar todo</button></div></div></div></section>
+    </main>
+
+    <nav class="mobile-nav" aria-label="Principal móvil"><button data-view="home" class="active"><span>⌂</span>Inicio</button><button data-view="closet"><span>▦</span>Clóset</button><button data-view="combine"><span>◫</span>Combinar</button><button data-view="inspire"><span>✦</span>Ideas</button><button data-view="history"><span>♡</span>Guardados</button></nav>
+  </div>
+
+  <dialog id="uploadDialog"><form id="garmentForm" method="dialog"><div class="modal-head"><div><span class="eyebrow">NUEVA PRENDA</span><h2>Añadir al clóset</h2></div><button type="button" id="closeUpload" class="icon-btn" aria-label="Cerrar">×</button></div><label class="image-drop"><input id="garmentImage" type="file" accept="image/*" capture="environment" required /><img id="imagePreview" alt="Vista previa" class="hidden" /><span id="dropPrompt">Toca para elegir o tomar una foto</span></label><div class="form-grid"><label>Nombre<input id="garmentName" required maxlength="45" placeholder="Ej. Blazer azul marino" /></label><label>Categoría<select id="garmentCategory" required><option value="upper">Tronco superior</option><option value="lower">Tronco inferior</option><option value="shoes">Zapatos</option></select></label><label>Tipo<select id="garmentType"><option>Camisa</option><option>Chaqueta</option><option>Saco</option><option>Blazer</option><option>Camiseta</option><option>Pantalón</option><option>Falda</option><option>Vestido</option><option>Tenis</option><option>Zapatos</option><option>Botas</option></select></label><label>Color<select id="garmentColor"><option value="negro">Negro</option><option value="blanco">Blanco</option><option value="gris">Gris</option><option value="beige">Beige</option><option value="azul">Azul</option><option value="verde">Verde</option><option value="marron">Marrón</option><option value="rojo">Rojo</option><option value="rosa">Rosa</option><option value="amarillo">Amarillo</option><option value="morado">Morado</option></select></label><label>Estilo<select id="garmentStyle"><option>Casual</option><option>Formal</option><option>Informal</option><option>Deportivo</option><option>Elegante</option></select></label><label>Sección<select id="garmentAudience"><option value="unisex">Unisex</option><option value="mujer">Mujer</option><option value="hombre">Hombre</option></select></label></div><button class="primary full" value="default">Guardar prenda</button></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js" defer></script>
+</body>
+</html>
